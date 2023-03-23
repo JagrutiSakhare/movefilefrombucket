@@ -11,8 +11,11 @@ pipeline {
 			steps {
 				echo "Terraform Execution start"
 				sh ('terraform init')
+				echo "Terraform Init Completed"
 				sh ('terraform plan')
+				echo "Terraform Plan Completed"
 				sh ('terraform apply –auto-approve')
+				echo "Terraform Apply Completed"
 			}
 		}
 	}
