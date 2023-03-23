@@ -1,6 +1,7 @@
 provider "google" {
   project = "acn-hybridcloudapplications"
   region  = "asia-east1"
+  credentials = "jenkins-sa.json"
 }
 
 # Zip up source code
