@@ -1,0 +1,10 @@
+# Function dependencies:
+cloudagnosticfass==0.0.8
+
+google-api-core
+google-auth
+google-cloud
+google-cloud-core
+google-cloud-storage
+google-cloud
+google-resumable-media
