@@ -7,6 +7,12 @@ pipeline {
                  //zip zipFile: 'test.zip', archive: false, exclude: 'Jenkinsfile, README.md'
             }
         }
+		stage('SonarQube Analysis') {
+			def scannerHome = tool 'SonarScanner';
+			withSonarQubeEnv() {
+			sh "${scannerHome}/bin/sonar-scanner"
+		}
+	}
 		stage ('Terraform Execution') {
 			steps {
 				echo "Terraform Execution start"
