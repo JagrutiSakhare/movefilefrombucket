@@ -7,10 +7,10 @@ pipeline {
                  //zip zipFile: 'test.zip', archive: false, exclude: 'Jenkinsfile, README.md'
             }
         }
-		stage('SonarQube Analysis') {
+		stage('SonarQube analysis') {
 			steps {
 				scripts{
-					scannerHome = tool 'SonarScanner';
+					scannerHome = tool 'SONAR_SCANNER';
 					}
 					withSonarQubeEnv(SONAR_SCANNER) {
 						sh "${scannerHome}/bin/sonar-scanner"
