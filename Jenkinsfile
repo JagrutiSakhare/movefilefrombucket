@@ -9,12 +9,14 @@ pipeline {
         }
 		stage('SonarQube Analysis') {
 			steps {
-				def scannerHome = tool 'SonarScanner';
-				withSonarQubeEnv(My SonarQube Server) {
-				sh "${scannerHome}/bin/windows-x86-64/StartSonar"
+				scripts{
+					scannerHome = tool 'SonarScanner';
+					}
+					withSonarQubeEnv(My SonarQube Server) {
+						sh "${scannerHome}/bin/sonar-scanner"
+					}
 			}	
 		}
-	}
 		stage ('Terraform Execution') {
 			steps {
 				echo "Terraform Execution start"
