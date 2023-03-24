@@ -10,8 +10,8 @@ pipeline {
 		stage('SonarQube Analysis') {
 			steps {
 				def scannerHome = tool 'SonarScanner';
-				withSonarQubeEnv() {
-				sh "${scannerHome}/bin/sonar-scanner"
+				withSonarQubeEnv(My SonarQube Server) {
+				sh "${scannerHome}/bin/windows-x86-64/StartSonar"
 			}	
 		}
 	}
