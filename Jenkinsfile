@@ -12,21 +12,21 @@ pipeline {
 				scannerHome = tool 'SONAR SCANNER';
 			}
 			steps {
-					withSonarQubeEnv(SONAR_SCANNER) {
-						sh "${scannerHome}/bin/sonar-scanner"
+				withSonarQubeEnv(SONAR_SCANNER) {
+					sh "${scannerHome}/bin/sonar-scanner"
 					}
 			}	
 		}
-		stage ('Terraform Execution') {
-			steps {
-				echo "Terraform Execution start"
-				sh ('terraform init')
-				echo "Terraform Init Completed"
-				sh ('terraform plan')
-				echo "Terraform Plan Completed"
-				sh ('terraform apply –auto-approve')
-				echo "Terraform Apply Completed"
-			}
-		}
+		//stage ('Terraform Execution') {
+			//steps {
+			//	echo "Terraform Execution start"
+			//	sh ('terraform init')
+			//	echo "Terraform Init Completed"
+			//	sh ('terraform plan')
+			//	echo "Terraform Plan Completed"
+			//	sh ('terraform apply –auto-approve')
+			//	echo "Terraform Apply Completed"
+			//}
+		//}
 	}
 }
