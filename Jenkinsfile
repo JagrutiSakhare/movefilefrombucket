@@ -9,9 +9,9 @@ pipeline {
         }
 		stage('SonarQube analysis') {
 			steps {
-				scripts{
+				//scripts{
 					scannerHome = tool 'SONAR SCANNER';
-					}
+					//}
 					withSonarQubeEnv(SONAR_SCANNER) {
 						sh "${scannerHome}/bin/sonar-scanner"
 					}
